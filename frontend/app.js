@@ -1,7 +1,3 @@
-
-// NebulaBoard - v9
-// Saved Layouts: delete button (DB + frontend), previous saves highlight
-
 const API_BASE_URL = "/backend";
 const $ = (id) => document.getElementById(id);
 
@@ -175,7 +171,7 @@ function buildChart(labels, values) {
   );
 
   items.push(
-    new fabric.Text("Custom Chart", {
+    new fabric.Text("", {
       left: paddingX,
       top: paddingY - 18,
       fontSize: 14,
@@ -553,6 +549,34 @@ function bindPalette() {
   $("btn-update-chart").onclick = handleUpdateChart;
 }
 
+function bindInspectorToggle() {
+  const btn = $("btn-toggle-inspector");
+  const panel = document.querySelector(".panel-right");
+  if (!btn || !panel) return;
+
+  btn.addEventListener("click", () => {
+    panel.classList.toggle("open");
+  });
+}
+
+
+function bindInspectorClose() {
+  const panel = document.querySelector(".panel-right");
+  const closeBtn = document.getElementById("btn-close-inspector");
+
+  if (!closeBtn) return;
+
+  closeBtn.addEventListener("click", () => {
+    panel.classList.remove("open");
+  });
+}
+
+
+
+
+
+
+
 function bindPreviousSavesButton() {
   const btn = $("btn-show-saves");
   const list = $("saved-list");
@@ -572,7 +596,10 @@ window.addEventListener("load", () => {
   bindSidebar();
   bindPalette();
   bindPreviousSavesButton();
+  bindInspectorToggle();
+  bindInspectorClose();
   $("btn-save").onclick = saveLayout;
   $("btn-load-latest").onclick = loadLatest;
   fetchSavedLayouts();
+
 });

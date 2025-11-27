@@ -2,10 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>NebulaBoard – Dashboard Builder</title>
+    <title>Dashboard Builder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,10 +18,10 @@
           <button class="hamburger" id="btn-toggle-sidebar">
             <span></span><span></span><span></span>
           </button>
-          <div class="brand-pill">
+          <!-- <div class="brand-pill">
             <span class="brand-dot"></span>
-            <span class="brand-name">Nebula<span>Board</span></span>
-          </div>
+            <span class="brand-name">SSR<span>Board</span></span>
+          </div> -->
           <span class="topbar-badge">Dynamic Dashboard Builder</span>
         </div>
 
@@ -27,10 +30,15 @@
           <button class="chip" id="btn-preview">Preview</button>
         </div>
 
+        <button id="btn-show-saves" class="btn ghost">Previous Saves</button>
+        <button id="btn-load-latest" class="btn ghost">Load Latest</button>
+        <button id="btn-save" class="btn primary">Save Layout</button>
+
         <div class="topbar-right">
-          <button id="btn-show-saves" class="btn ghost">Previous Saves</button>
-          <button id="btn-load-latest" class="btn ghost">Load Latest</button>
-          <button id="btn-save" class="btn primary">Save Layout</button>
+          <button id="btn-toggle-inspector" class="btn ghost inspector-toggle">
+            <!-- ⟪ Inspector -->
+            ❮
+          </button>
         </div>
       </header>
 
@@ -46,7 +54,7 @@
               <span class="element-icon">H</span>
               <span class="element-text">
                 Heading
-                <span>Add bold hero titles</span>
+                <span>Add bold text titles</span>
               </span>
             </button>
 
@@ -94,11 +102,17 @@
           <div class="canvas-toolbar">
             <div class="crumb">
               <span class="crumb-dot"></span>
-              <span id="crumb-label">Hero Dashboard</span>
+              <span id="crumb-label">Dashboard</span>
             </div>
             <div class="canvas-toolbar-right">
               <span class="zoom-label">Zoom</span>
-              <input id="zoom-range" type="range" min="50" max="150" value="100" />
+              <input
+                id="zoom-range"
+                type="range"
+                min="50"
+                max="150"
+                value="100"
+              />
               <span class="zoom-value" id="zoom-value">100%</span>
             </div>
           </div>
@@ -109,9 +123,12 @@
           </div>
         </main>
 
-        <aside class="panel panel-right">
+        <aside class="panel panel-right" id="right-inspector">
           <div class="panel-header">
             <span class="panel-title">Inspector</span>
+            <button id="btn-close-inspector" class="inspector-close-btn">
+              ✕
+            </button>
           </div>
 
           <div class="panel-section">
@@ -163,16 +180,28 @@
             <p class="panel-label">Chart Data</p>
             <label class="field">
               <span>Labels (comma separated)</span>
-              <textarea id="chart-labels" rows="2" placeholder="Jan, Feb, Mar, Apr"></textarea>
+              <textarea
+                id="chart-labels"
+                rows="2"
+                placeholder="Jan, Feb, Mar, Apr"
+              ></textarea>
             </label>
             <label class="field">
               <span>Values (comma separated)</span>
-              <textarea id="chart-values" rows="2" placeholder="10, 30, 25, 45"></textarea>
+              <textarea
+                id="chart-values"
+                rows="2"
+                placeholder="10, 30, 25, 45"
+              ></textarea>
             </label>
             <button id="btn-create-chart" class="btn xs ghost full">
               Create Chart from data
             </button>
-            <button id="btn-update-chart" class="btn xs primary full" style="margin-top:4px;">
+            <button
+              id="btn-update-chart"
+              class="btn xs primary full"
+              style="margin-top: 4px"
+            >
               Update selected chart
             </button>
           </div>
@@ -188,13 +217,20 @@
               <button id="btn-bring-front" class="btn xs ghost">Front</button>
               <button id="btn-send-back" class="btn xs ghost">Back</button>
             </div>
-            <button id="btn-delete" class="btn danger full">Delete Element</button>
+            <button id="btn-delete" class="btn danger full">
+              Delete Element
+            </button>
           </div>
         </aside>
       </div>
     </div>
 
-    <input type="file" id="image-input" accept="image/*" style="display:none" />
+    <input
+      type="file"
+      id="image-input"
+      accept="image/*"
+      style="display: none"
+    />
     <script src="app.js"></script>
   </body>
 </html>
