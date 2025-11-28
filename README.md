@@ -1,4 +1,3 @@
-
 # Dynamic Dashboard Builder – Full Stack Assignment
 
 This project is my implementation of a **Dynamic Dashboard Builder**, similar to a lightweight version of Canva / Figma / Webflow-style canvas editors.
@@ -123,6 +122,16 @@ dashboard-builder/
       ├── get_layout.php  # Get latest or specific layout by id
       ├── list_layouts.php# List recent layouts
       └── delete_layout.php # Delete a saved layout
+
+
+
+****Important 
+### 🚀 Run Project Locally;
+```bash
+cd backend
+mysql -u root < init.sql  
+cd ..
+php -S localhost:8000
 
 
 

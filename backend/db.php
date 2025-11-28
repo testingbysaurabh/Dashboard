@@ -1,7 +1,7 @@
 <?php
 $DB_HOST = "localhost";
 $DB_USER = "root";
-$DB_PASS = ""; // agar password hai to yaha set karo
+$DB_PASS = "";
 $DB_NAME = "dashboard_builder";
 
 $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
