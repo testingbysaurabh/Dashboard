@@ -3,8 +3,6 @@ const $ = (id) => document.getElementById(id);
 
 let canvas;
 
-
-
 function initCanvas() {
   const c = $("editorCanvas");
   const wrapper = c.parentElement.getBoundingClientRect();
