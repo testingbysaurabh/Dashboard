@@ -4,6 +4,7 @@ This project is my implementation of a **Dynamic Dashboard Builder**, similar to
 
 Users can add, move and resize components on a canvas (headings, paragraphs, cards, images and charts), and then **save the entire layout** to a MySQL database. Saved dashboards can be reloaded later, previewed, or deleted.
 
+
 I’ve focused on:
 
 - A clean and modern UI
