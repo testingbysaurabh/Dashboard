@@ -1,3 +1,4 @@
+
 # Dynamic Dashboard Builder – Full Stack Assignment
 
 This project is my implementation of a **Dynamic Dashboard Builder**, similar to a lightweight version of Canva / Figma / Webflow-style canvas editors.
