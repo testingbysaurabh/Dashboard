@@ -15,7 +15,7 @@ I’ve focused on:
 
 ---
 
-## 🚀 Features
+##  Features
 
 ### 1. Canvas & Layout
 
@@ -129,7 +129,7 @@ dashboard-builder/
 
 
 ****Important 
-### 🚀 Run Project Locally;
+###  Run Project Locally;
 ```bash
 cd backend
 mysql -u root < init.sql  
